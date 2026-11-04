@@ -174,9 +174,17 @@
         .work__tag { position: absolute; left: 1rem; top: 1rem; padding: 0.35rem 0.95rem; border-radius: 999px; background: var(--marfil); color: var(--burdeos); font-size: var(--step-small); font-weight: 600; }
         .work__name { position: relative; z-index: 1; margin-top: 1.5rem; font-size: var(--step-lead); font-weight: 300; line-height: 1.2; }
         .work__meta { position: relative; z-index: 1; margin-top: 0.3rem; }
-        .work__more { align-self: end; padding-bottom: 0.5rem; }
-        .work__more::before { display: none; }
+        /* «Más trabajo»: dos feeds más, superpuestos, para cerrar la rejilla junto al último proyecto */
+        .more__stack { position: relative; z-index: 1; aspect-ratio: 1 / 1.05; margin-bottom: 2rem; }
+        .more__card { position: absolute; width: 58%; border-radius: var(--round); overflow: clip; background: var(--vino); transition: rotate var(--t-ui) var(--ease-out), translate var(--t-ui) var(--ease-out); }
+        .more__card img { width: 100%; }
+        .more__card--a { left: 0; top: 0; rotate: -4deg; }
+        .more__card--b { right: 0; top: 18%; rotate: 5deg; }
+        .work__more h3, .work__more p, .work__more .button { position: relative; z-index: 1; }
         .work__more p { max-width: 34ch; margin: 1rem 0 1.5rem; }
+        @media (hover: hover) and (pointer: fine) {
+            .more__card:hover { rotate: 0deg; translate: 0 -6px; z-index: 2; }
+        }
         @media (hover: hover) and (pointer: fine) {
             .work__item:hover .work__card { rotate: 0deg; translate: 0 -6px; }
         }
@@ -489,8 +497,12 @@
                         <p class="work__meta small muted">Mercado agrícola en Venezuela</p>
                     </li>
                     <li class="work__item work__more" data-reveal>
-                        <h3 class="lead">Más trabajo</h3>
-                        <p class="muted">Los feeds de Evolution Logistic, Beias, Bold Girls y Transporte MZCZ están en el portafolio completo.</p>
+                        <div class="more__stack">
+                            <figure class="more__card more__card--a"><img src="img/feed-boldgirls.webp" width="664" height="888" loading="lazy" alt="Feed de Instagram de Bold Girls en rosa y blanco: conjuntos, accesorios y consejos para combinar prendas"><span class="work__tag">@boldgirls.ve</span></figure>
+                            <figure class="more__card more__card--b"><img src="img/feed-evolution.webp" width="664" height="888" loading="lazy" alt="Feed de Instagram de Evolution Logistic: envíos aéreos y marítimos en azul y naranja"><span class="work__tag">@evolutionslogistic</span></figure>
+                        </div>
+                        <h3 class="lead">Y más marcas</h3>
+                        <p class="muted">Bold Girls, Evolution Logistic, Beias y Transporte MZCZ: todos sus feeds están en el portafolio completo.</p>
                         <a class="button" href="PORTAFOLIO PORTU EN REDES PDF .pdf" download>Descargar portafolio (PDF) <span class="arrow" aria-hidden="true">↓</span></a>
                     </li>
                 </ul>
@@ -619,9 +631,9 @@
                     <p>Logotipo, variaciones, tipografía y paleta reunidos en un brand board. Así nacieron las identidades de Repuestos Dalessa y 3BUY.</p>
                 </div>
                 <div class="fan">
-                    <figure class="board board--a" data-reveal style="--i:1"><img src="img/board-dalessa.webp" width="668" height="928" loading="lazy" alt="Brand board de Repuestos Dalessa: logotipo principal, favicon, variaciones, tipografía Equalize y paleta amarilla, gris y negra"><figcaption>Repuestos Dalessa</figcaption></figure>
-                    <figure class="board board--b" data-reveal style="--i:2"><img src="img/board-3buy.webp" width="656" height="928" loading="lazy" alt="Brand board de 3BUY: logotipo con carrito, favicon, variaciones de color, tipografía Montserrat ExtraBold y paleta azul, naranja y roja"><figcaption>3BUY</figcaption></figure>
-                    <figure class="board board--c" data-reveal style="--i:3"><img src="img/logo-silueta.webp" width="410" height="520" loading="lazy" alt="Logotipo rosa con la silueta de una mujer con pamela, dentro de un arco"><figcaption>Logotipo de silueta</figcaption></figure>
+                    <figure class="board board--a"><img src="img/board-dalessa.webp" width="668" height="928" loading="lazy" alt="Brand board de Repuestos Dalessa: logotipo principal, favicon, variaciones, tipografía Equalize y paleta amarilla, gris y negra"><figcaption>Repuestos Dalessa</figcaption></figure>
+                    <figure class="board board--b"><img src="img/board-3buy.webp" width="656" height="928" loading="lazy" alt="Brand board de 3BUY: logotipo con carrito, favicon, variaciones de color, tipografía Montserrat ExtraBold y paleta azul, naranja y roja"><figcaption>3BUY</figcaption></figure>
+                    <figure class="board board--c"><img src="img/logo-silueta.webp" width="410" height="520" loading="lazy" alt="Logotipo rosa con la silueta de una mujer con pamela, dentro de un arco"><figcaption>Logotipo de silueta</figcaption></figure>
                     <svg class="spark spark--a" aria-hidden="true" focusable="false"><use href="#spark"/></svg>
                 </div>
             </div>
