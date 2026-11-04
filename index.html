@@ -1,1533 +1,747 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Rogelmist Ferreira | Publicista & Marketing Digital</title>
-        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%2387CEEB'/><stop offset='100%25' style='stop-color:%23007FFF'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23g)'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='white'>✦</text></svg>">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap"
-            rel="stylesheet">
-        <style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rogelmist Guadalupe Ferreira Bastidas · Publicidad y marketing digital</title>
+    <meta name="description" content="Publicista y Marketing Specialist en Madrid. Contenido, campañas e identidades de marca para empresas de Venezuela, Estados Unidos y España. Creatividad + Estrategia + Resultados.">
+    <meta name="theme-color" content="#602331">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:title" content="Rogelmist Guadalupe Ferreira Bastidas · Publicidad y marketing digital">
+    <meta property="og:description" content="Creatividad + Estrategia + Resultados. Contenido, campañas e identidades de marca para empresas de Venezuela, Estados Unidos y España.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23602331'/><text x='50' y='69' font-family='Montserrat,Arial,sans-serif' font-weight='800' font-size='56' text-anchor='middle' fill='%23F3E8DF'>R</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script>document.documentElement.classList.add('js');</script>
+    <style>
+        /* ---------- Manual de marca: color y tipografía ---------- */
         :root {
-            --sky-blue: #87CEEB;
-            --light-blue: #B8D4E8;
-            --soft-blue: #A7C7E7;
-            --baby-blue: #D6EAF8;
-            --ocean-blue: #5DADE2;
-            --azure: #007FFF;
-            --powder-blue: #E8F4FC;
-            --white: #ffffff;
-            --cream: #FDFEFE;
-            --dark-text: #2C3E50;
-            --gray-text: #5D6D7E;
-            --coral-accent: #FF7F7F;
-            --peach: #FFDAB9;
-            --lavender: #E6E6FA;
+            --burdeos: #602331;      /* principal */
+            --vino: #71313B;         /* secundario */
+            --terracota: #D29A87;    /* acento */
+            --marfil: #F3E8DF;       /* contraste */
+            --rosa: #B66E68;         /* complementario */
+
+            --muted-dark: #CAB1AF;   /* texto secundario sobre burdeos */
+            --muted-light: #85545D;  /* texto secundario sobre marfil y terracota */
+
+            --font: 'Montserrat', 'Poppins', system-ui, sans-serif;
+
+            --step-small: 0.9375rem;
+            --step-text: clamp(1rem, 0.96rem + 0.18vw, 1.125rem);
+            --step-lead: clamp(1.375rem, 1.1rem + 1vw, 2rem);
+            --step-head: clamp(2.125rem, 1.5rem + 2.2vw, 3.375rem);
+            --step-name: min(4.75rem, calc(100cqw / 11.2));
+
+            --margin: clamp(1.25rem, 5vw, 5rem);
+            --gutter: clamp(1rem, 2vw, 2rem);
+            --section: clamp(5.5rem, 10vw, 9.5rem);
+            --curve: clamp(2rem, 5vw, 4.5rem);
+            --round: 1.75rem;
+
+            --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+            --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+            --t-press: 140ms;
+            --t-hover: 200ms;
+            --t-ui: 320ms;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        *, *::before, *::after { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-behavior: smooth; }
         body {
-            font-family: 'Poppins', sans-serif;
-            background: var(--cream);
-            color: var(--dark-text);
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-
-        /* Decorative Elements */
-        .blob-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-            overflow: hidden;
-        }
-
-        .blob {
-            position: absolute;
-            border-radius: 50% 40% 60% 50%;
-            filter: blur(40px);
-            opacity: 0.5;
-            animation: blob-float 15s ease-in-out infinite;
-        }
-
-        .blob-1 {
-            width: 500px;
-            height: 500px;
-            background: linear-gradient(135deg, var(--baby-blue), var(--soft-blue));
-            top: -150px;
-            right: -100px;
-            animation-delay: 0s;
-        }
-
-        .blob-2 {
-            width: 400px;
-            height: 400px;
-            background: linear-gradient(135deg, var(--light-blue), var(--sky-blue));
-            bottom: 10%;
-            left: -100px;
-            animation-delay: -5s;
-            border-radius: 60% 40% 30% 70%;
-        }
-
-        .blob-3 {
-            width: 300px;
-            height: 300px;
-            background: linear-gradient(135deg, var(--lavender), var(--baby-blue));
-            top: 40%;
-            right: 5%;
-            animation-delay: -10s;
-            border-radius: 40% 60% 70% 30%;
-        }
-
-        @keyframes blob-float {
-            0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
-            33% { transform: translate(30px, -30px) rotate(5deg) scale(1.05); }
-            66% { transform: translate(-20px, 20px) rotate(-5deg) scale(0.95); }
-        }
-
-        /* Social Icons Floating */
-        .floating-icons {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .float-icon {
-            position: absolute;
-            font-size: 2rem;
-            opacity: 0.15;
-            animation: icon-float 20s linear infinite;
-        }
-
-        .float-icon:nth-child(1) { top: 15%; left: 5%; animation-delay: 0s; }
-        .float-icon:nth-child(2) { top: 25%; right: 8%; animation-delay: -3s; }
-        .float-icon:nth-child(3) { top: 55%; left: 3%; animation-delay: -6s; }
-        .float-icon:nth-child(4) { top: 70%; right: 5%; animation-delay: -9s; }
-        .float-icon:nth-child(5) { top: 85%; left: 10%; animation-delay: -12s; }
-
-        @keyframes icon-float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(10deg); }
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 1.2rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            backdrop-filter: blur(15px);
-            background: rgba(255, 255, 255, 0.8);
-            border-bottom: 1px solid rgba(135, 206, 235, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: var(--azure);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--sky-blue), var(--azure));
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--dark-text);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-            padding: 0.5rem 0;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--sky-blue), var(--azure));
-            border-radius: 2px;
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--azure);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            padding: 5px;
-        }
-
-        .menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background: var(--azure);
-            border-radius: 2px;
-            transition: all 0.3s ease;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 8rem 10% 4rem;
-            position: relative;
-        }
-
-        .hero-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            width: 100%;
-        }
-
-        .hero-content {
-            max-width: 600px;
-        }
-
-        .hero-visual {
-            position: relative;
-            display: flex;
-            justify-content: center;
-        }
-
-        .profile-frame {
-            position: relative;
-            width: 350px;
-            height: 400px;
-        }
-
-        .profile-card {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(145deg, var(--white), var(--baby-blue));
-            border-radius: 30px;
-            box-shadow: 
-                0 25px 50px rgba(135, 206, 235, 0.3),
-                0 10px 20px rgba(0, 127, 255, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 8rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .profile-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
-            transform: rotate(45deg);
-            animation: shine 3s ease-in-out infinite;
-        }
-
-        @keyframes shine {
-            0%, 100% { transform: translateX(-100%) rotate(45deg); }
-            50% { transform: translateX(100%) rotate(45deg); }
-        }
-
-        .social-bubbles {
-            position: absolute;
-        }
-
-        .bubble {
-            position: absolute;
-            background: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 10px 30px rgba(0, 127, 255, 0.2);
-            animation: bubble-bounce 3s ease-in-out infinite;
-        }
-
-        .bubble-1 {
-            width: 60px;
-            height: 60px;
-            top: -20px;
-            right: -20px;
-            font-size: 1.8rem;
-            animation-delay: 0s;
-        }
-
-        .bubble-2 {
-            width: 50px;
-            height: 50px;
-            bottom: 50px;
-            left: -30px;
-            font-size: 1.5rem;
-            animation-delay: -1s;
-        }
-
-        .bubble-3 {
-            width: 45px;
-            height: 45px;
-            bottom: -10px;
-            right: 50px;
-            font-size: 1.3rem;
-            animation-delay: -2s;
-        }
-
-        @keyframes bubble-bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .greeting {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.6rem 1.2rem;
-            background: linear-gradient(135deg, var(--baby-blue), var(--light-blue));
-            border-radius: 50px;
-            font-size: 0.9rem;
-            color: var(--azure);
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-            animation: fadeInUp 0.8s ease forwards;
-        }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 5vw, 3.8rem);
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-            color: var(--dark-text);
-            animation: fadeInUp 0.8s ease 0.1s forwards;
-            opacity: 0;
-        }
-
-        .hero h1 .highlight {
-            color: var(--azure);
-            position: relative;
-        }
-
-        .hero h1 .highlight::after {
-            content: '';
-            position: absolute;
-            bottom: 5px;
-            left: 0;
-            width: 100%;
-            height: 12px;
-            background: var(--sky-blue);
-            opacity: 0.4;
-            z-index: -1;
-            border-radius: 4px;
-        }
-
-        .hero-roles {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem;
-            margin-bottom: 1.5rem;
-            animation: fadeInUp 0.8s ease 0.2s forwards;
-            opacity: 0;
-        }
-
-        .role-tag {
-            padding: 0.5rem 1rem;
-            background: var(--white);
-            border: 2px solid var(--light-blue);
-            border-radius: 25px;
-            font-size: 0.85rem;
-            color: var(--azure);
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .role-tag:hover {
-            background: var(--azure);
-            color: white;
-            border-color: var(--azure);
-            transform: translateY(-2px);
-        }
-
-        .hero-description {
-            font-size: 1.1rem;
-            color: var(--gray-text);
-            margin-bottom: 1.5rem;
-            animation: fadeInUp 0.8s ease 0.3s forwards;
-            opacity: 0;
-        }
-
-        .hero-location {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--gray-text);
-            margin-bottom: 2rem;
-            font-weight: 500;
-            animation: fadeInUp 0.8s ease 0.4s forwards;
-            opacity: 0;
-        }
-
-        .hero-location svg {
-            color: var(--coral-accent);
-        }
-
-        .hero-cta {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            animation: fadeInUp 0.8s ease 0.5s forwards;
-            opacity: 0;
-        }
-
-        .btn {
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-family: 'Poppins', sans-serif;
-            font-size: 0.95rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--sky-blue), var(--azure));
-            color: var(--white);
-            border: none;
-            box-shadow: 0 10px 30px rgba(0, 127, 255, 0.3);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0, 127, 255, 0.4);
-        }
-
-        .btn-secondary {
-            background: var(--white);
-            color: var(--azure);
-            border: 2px solid var(--sky-blue);
-        }
-
-        .btn-secondary:hover {
-            background: var(--baby-blue);
-            transform: translateY(-3px);
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Section Styles */
-        section {
-            padding: 5rem 10%;
-            position: relative;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 3.5rem;
-        }
-
-        .section-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1.2rem;
-            background: linear-gradient(135deg, var(--baby-blue), var(--light-blue));
-            border-radius: 25px;
-            color: var(--azure);
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 4vw, 2.8rem);
-            font-weight: 700;
-            color: var(--dark-text);
-            margin-bottom: 0.8rem;
-        }
-
-        .section-subtitle {
-            color: var(--gray-text);
-            font-size: 1.05rem;
-            max-width: 550px;
-            margin: 0 auto;
-        }
-
-        /* About Section */
-        .about {
-            background: linear-gradient(180deg, var(--cream), var(--powder-blue), var(--cream));
-        }
-
-        .about-container {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-visual {
-            position: relative;
-        }
-
-        .stat-card {
-            background: var(--white);
-            border-radius: 24px;
-            padding: 2.5rem;
-            box-shadow: 0 20px 50px rgba(135, 206, 235, 0.25);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .stat-card::before {
-            content: '✨';
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 2rem;
-        }
-
-        .stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 4.5rem;
-            font-weight: 700;
-            color: var(--azure);
-            line-height: 1;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 1.1rem;
-            color: var(--gray-text);
-            font-weight: 500;
-        }
-
-        .mini-cards {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .mini-card {
-            flex: 1;
-            background: linear-gradient(135deg, var(--baby-blue), var(--light-blue));
-            border-radius: 16px;
-            padding: 1.2rem;
-            text-align: center;
-        }
-
-        .mini-card-icon {
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .mini-card-text {
-            font-size: 0.85rem;
-            color: var(--dark-text);
-            font-weight: 500;
-        }
-
-        .about-content h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            color: var(--dark-text);
-            margin-bottom: 1.5rem;
-        }
-
-        .about-content p {
-            color: var(--gray-text);
-            margin-bottom: 1.5rem;
-            font-size: 1.05rem;
-        }
-
-        .about-content strong {
-            color: var(--azure);
-        }
-
-        .about-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-            margin-top: 2rem;
-        }
-
-        .about-tag {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.6rem 1.2rem;
-            background: var(--white);
-            border: 2px solid var(--light-blue);
-            border-radius: 50px;
-            font-size: 0.9rem;
-            color: var(--dark-text);
-            font-weight: 500;
-        }
-
-        /* Experience Section */
-        .experience-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .experience-card {
-            background: var(--white);
-            border-radius: 24px;
-            padding: 2rem;
-            box-shadow: 0 15px 40px rgba(135, 206, 235, 0.2);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .experience-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, var(--sky-blue), var(--azure));
-        }
-
-        .experience-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 50px rgba(0, 127, 255, 0.2);
-        }
-
-        .experience-icon {
-            width: 55px;
-            height: 55px;
-            background: linear-gradient(135deg, var(--baby-blue), var(--light-blue));
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 1.2rem;
-        }
-
-        .experience-company {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--dark-text);
-            margin-bottom: 0.4rem;
-        }
-
-        .experience-role {
-            color: var(--azure);
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 0.8rem;
-        }
-
-        .experience-description {
-            color: var(--gray-text);
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-
-        /* Skills Section */
-        .skills {
-            background: linear-gradient(180deg, var(--cream), var(--powder-blue), var(--cream));
-        }
-
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-card {
-            background: var(--white);
-            border-radius: 24px;
-            padding: 2rem;
-            box-shadow: 0 15px 40px rgba(135, 206, 235, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .skill-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .skill-icon {
-            width: 55px;
-            height: 55px;
-            background: linear-gradient(135deg, var(--sky-blue), var(--azure));
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-        }
-
-        .skill-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--dark-text);
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .skill-tag {
-            padding: 0.5rem 1rem;
-            background: linear-gradient(135deg, var(--baby-blue), var(--light-blue));
-            border-radius: 20px;
-            font-size: 0.85rem;
-            color: var(--dark-text);
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .skill-tag:hover {
-            background: linear-gradient(135deg, var(--sky-blue), var(--azure));
-            color: white;
-        }
-
-        /* Certifications Section */
-        .certs-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        .cert-badge {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            padding: 1rem 1.5rem;
-            background: var(--white);
-            border-radius: 50px;
-            box-shadow: 0 10px 30px rgba(135, 206, 235, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .cert-badge:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0, 127, 255, 0.2);
-        }
-
-        .cert-badge-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--sky-blue), var(--azure));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-        }
-
-        .cert-badge-name {
-            font-weight: 600;
-            color: var(--dark-text);
-            font-size: 0.95rem;
-        }
-
-        /* Competencies Section */
-        .competencies {
-            background: linear-gradient(180deg, var(--cream), var(--powder-blue), var(--cream));
-        }
-
-        .competencies-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.2rem;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .competency-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1.2rem 1.5rem;
-            background: var(--white);
-            border-radius: 16px;
-            box-shadow: 0 8px 25px rgba(135, 206, 235, 0.15);
-            transition: all 0.3s ease;
-        }
-
-        .competency-item:hover {
-            transform: translateX(8px);
-            box-shadow: 0 12px 35px rgba(0, 127, 255, 0.15);
-        }
-
-        .competency-icon {
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(135deg, var(--baby-blue), var(--light-blue));
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            flex-shrink: 0;
-        }
-
-        .competency-name {
-            font-weight: 600;
-            color: var(--dark-text);
-        }
-
-        /* Education Section */
-        .education-card {
-            max-width: 600px;
-            margin: 0 auto;
-            background: var(--white);
-            border-radius: 30px;
-            padding: 3rem;
-            box-shadow: 0 20px 50px rgba(135, 206, 235, 0.25);
-            text-align: center;
-            position: relative;
-        }
-
-        .education-card::before {
-            content: '🎓';
-            position: absolute;
-            top: -30px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 4rem;
-        }
-
-        .education-degree {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--dark-text);
-            margin-top: 1rem;
-            margin-bottom: 0.8rem;
-        }
-
-        .education-institution {
-            color: var(--azure);
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-
-        /* Contact Section */
-        .contact {
-            background: linear-gradient(180deg, var(--cream), var(--powder-blue));
-        }
-
-        .contact-container {
-            max-width: 700px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .contact-emoji {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-        }
-
-        .contact-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 700;
-            color: var(--dark-text);
-            margin-bottom: 1rem;
-        }
-
-        .contact-title .highlight {
-            color: var(--azure);
-        }
-
-        .contact-subtitle {
-            color: var(--gray-text);
-            font-size: 1.1rem;
-            margin-bottom: 2.5rem;
-        }
-
-        .contact-cards {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .contact-card {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1.5rem 2rem;
-            background: var(--white);
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(135, 206, 235, 0.25);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .contact-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 50px rgba(0, 127, 255, 0.25);
-        }
-
-        .contact-card-icon {
-            width: 55px;
-            height: 55px;
-            background: linear-gradient(135deg, var(--sky-blue), var(--azure));
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: white;
-        }
-
-        .contact-card-info {
-            text-align: left;
-        }
-
-        .contact-card-label {
-            font-size: 0.85rem;
-            color: var(--gray-text);
-            margin-bottom: 0.2rem;
-        }
-
-        .contact-card-value {
-            font-weight: 600;
-            color: var(--dark-text);
-            font-size: 0.95rem;
-        }
-
-        /* Footer */
-        footer {
-            padding: 2rem 10%;
-            text-align: center;
-            background: var(--powder-blue);
-        }
-
-        footer p {
-            color: var(--gray-text);
-            font-size: 0.9rem;
-        }
-
-        footer .heart {
-            color: var(--coral-accent);
-        }
-
-        /* Animations */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.7s ease;
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Responsive */
-        @media (max-width: 992px) {
-            .hero-container {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-content {
-                max-width: 100%;
-            }
-
-            .hero-roles {
-                justify-content: center;
-            }
-
-            .hero-location {
-                justify-content: center;
-            }
-
-            .hero-cta {
-                justify-content: center;
-            }
-
-            .hero-visual {
-                order: -1;
-            }
-
-            .profile-frame {
-                width: 280px;
-                height: 320px;
-            }
-
-            .about-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                flex-direction: column;
-                background: rgba(255, 255, 255, 0.98);
-                padding: 1.5rem;
-                gap: 1rem;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .menu-toggle {
-                display: flex;
-            }
-
-            .hero {
-                padding: 7rem 5% 3rem;
-            }
-
-            section {
-                padding: 4rem 5%;
-            }
-
-            .hero-cta {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .contact-cards {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .contact-card {
-                width: 100%;
-                max-width: 320px;
+            margin: 0;
+            background: var(--burdeos);
+            color: var(--marfil);
+            font-family: var(--font);
+            font-size: var(--step-text);
+            line-height: 1.65;
+            font-kerning: normal;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: clip;
+        }
+        h1, h2, h3, p, figure, ul, ol, dl, dd, fieldset { margin: 0; }
+        :where(ul, ol)[class] { padding: 0; list-style: none; }
+        img { display: block; max-width: 100%; height: auto; }
+        a { color: inherit; }
+        :target { scroll-margin-top: 1rem; }
+        ::selection { background: var(--terracota); color: var(--burdeos); }
+        :focus-visible { outline: 2px solid var(--terracota); outline-offset: 4px; }
+        .on-light :focus-visible, .on-accent :focus-visible { outline-color: var(--burdeos); }
+        .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+        .skip { position: absolute; left: var(--margin); top: -4rem; z-index: 30; padding: 0.75rem 1.25rem; border-radius: 999px; background: var(--marfil); color: var(--burdeos); font-weight: 600; }
+        .skip:focus { top: 1rem; }
+
+        .wrap { padding-inline: var(--margin); }
+        .grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); }
+        .on-light { background: var(--marfil); color: var(--burdeos); }
+        .on-accent { background: var(--terracota); color: var(--burdeos); }
+        .on-dark { background: var(--burdeos); color: var(--marfil); }
+        .muted { color: var(--muted-dark); }
+        .on-light .muted { color: var(--muted-light); }
+        .on-accent .muted { color: var(--burdeos); }
+
+        /* Las secciones son hojas de esquinas redondeadas que se montan sobre la anterior */
+        .sheet { position: relative; border-radius: var(--curve) var(--curve) 0 0; margin-top: calc(var(--curve) * -1); padding-block: calc(var(--section) * 0.75 + var(--curve) * 0.4) calc(var(--section) * 0.75 + var(--curve)); overflow: clip; }
+        .heading { font-size: var(--step-head); font-weight: 300; line-height: 1.08; letter-spacing: -0.025em; text-wrap: balance; }
+        .lead { font-size: var(--step-lead); font-weight: 300; line-height: 1.3; letter-spacing: -0.012em; }
+        .small { font-size: var(--step-small); line-height: 1.55; }
+
+        /* Destello de cuatro puntas y círculos, como en el banner de marca */
+        .spark { position: absolute; width: 1.75rem; height: 1.75rem; color: var(--terracota); pointer-events: none; }
+        .orb { position: absolute; border-radius: 50%; pointer-events: none; }
+
+        .link { text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 0.25em; text-decoration-thickness: 1px; transition: text-decoration-color var(--t-hover) ease; }
+        .link--on { text-decoration-color: currentColor; }
+        .arrow { display: inline-block; transition: transform var(--t-ui) var(--ease-out); }
+        .text-action { display: inline-flex; align-items: center; gap: 0.5em; min-height: 3.25rem; font-weight: 600; text-decoration: none; }
+
+        .button {
+            display: inline-flex; align-items: center; justify-content: center; gap: 0.6em;
+            min-height: 3.25rem; padding: 0 1.9rem; border-radius: 999px;
+            background: var(--terracota); color: var(--burdeos);
+            font-weight: 600; text-decoration: none; white-space: nowrap;
+            transition: transform var(--t-press) var(--ease-out), background-color var(--t-hover) ease, color var(--t-hover) ease;
+        }
+        .button:active { transform: scale(0.97); }
+        .on-light .button, .on-accent .button { background: var(--burdeos); color: var(--marfil); }
+
+        @media (hover: hover) and (pointer: fine) {
+            .link:hover { text-decoration-color: currentColor; }
+            .button:hover { background: var(--marfil); }
+            .on-light .button:hover, .on-accent .button:hover { background: var(--vino); color: var(--marfil); }
+            .button:hover .arrow, .text-action:hover .arrow { transform: translateX(0.3em); }
+        }
+
+        /* ---------- Barra ---------- */
+        .bar { position: relative; z-index: 5; display: flex; align-items: center; justify-content: space-between; gap: 2rem; min-height: 5.5rem; }
+        .bar__brand { text-decoration: none; font-weight: 300; letter-spacing: -0.01em; white-space: nowrap; }
+        .bar__brand b { font-weight: 800; }
+        .bar__links { display: flex; gap: clamp(1.5rem, 3vw, 3rem); }
+        .bar__links a { display: inline-flex; align-items: center; min-height: 2.75rem; }
+        .bar__toggle { display: none; min-height: 2.75rem; padding: 0 1.25rem; border: 0; border-radius: 999px; background: var(--vino); color: inherit; font: inherit; font-weight: 600; cursor: pointer; }
+
+        /* ---------- Portada ---------- */
+        .hero { position: relative; overflow: clip; min-height: 100svh; display: grid; grid-template-rows: auto 1fr; padding-bottom: calc(var(--curve) + 4rem); }
+        .hero__orb { width: 44vw; aspect-ratio: 1; left: -15vw; top: -17vw; background: var(--vino); opacity: 0.75; }
+        .outline-word { display: block; pointer-events: none; overflow: visible; }
+        .outline-word text { font-family: var(--font); font-weight: 800; letter-spacing: -0.045em; fill: none; stroke-width: 1.5px; vector-effect: non-scaling-stroke; }
+        .hero__word { position: absolute; left: 1vw; width: 98vw; height: auto; bottom: calc(var(--curve) + 1rem); }
+        .hero__word text { stroke: rgba(243, 232, 223, 0.14); }
+        .hero__main { position: relative; z-index: 1; align-items: center; padding-block: clamp(1.5rem, 4vh, 3.5rem) 0; }
+        .hero__text { grid-column: 1 / span 7; container-type: inline-size; }
+        .hero__name { font-size: var(--step-name); line-height: 1.02; letter-spacing: -0.03em; }
+        .hero__name > span { display: block; }
+        .hero__first { font-weight: 800; }
+        .hero__last { font-weight: 300; }
+        .hero__role { margin-top: 2rem; max-width: 34ch; }
+        .hero__concept { margin-top: 0.6rem; }
+        .hero__concept b { font-weight: 300; color: var(--terracota); }
+        .hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 2rem; margin-top: 2.5rem; }
+
+        .hero__visual { grid-column: 8 / -1; justify-self: center; position: relative; width: min(100%, 23rem); margin-block: 1rem 2rem; }
+        .hero__disc { width: 72%; aspect-ratio: 1; right: -16%; bottom: -10%; background: var(--terracota); }
+        .hero__portrait { position: relative; z-index: 1; border-radius: 999px 999px var(--round) var(--round); overflow: clip; background: var(--vino); }
+        .hero__portrait img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 28%; }
+        .badge { position: absolute; z-index: 2; width: clamp(6.5rem, 10vw, 8.75rem); height: auto; left: -2.75rem; top: 52%; }
+        .badge__ring { transform-origin: 50% 50%; transform-box: view-box; }
+        .hero__visual .spark--a { right: -0.5rem; top: 8%; width: 2.25rem; height: 2.25rem; color: var(--marfil); }
+        .hero__visual .spark--b { left: 6%; top: -1.5rem; width: 1.25rem; height: 1.25rem; }
+
+        /* Cinta en diagonal entre la portada y el trabajo */
+        .ribbon-band { position: relative; z-index: 6; overflow: clip; margin-top: calc(var(--curve) * -1 - 4.75rem); padding-block: 1.5rem; pointer-events: none; }
+        .ribbon { margin-inline: -5vw; rotate: -2.2deg; background: var(--terracota); color: var(--burdeos); overflow: clip; pointer-events: auto; }
+        .ribbon__track { display: flex; width: max-content; }
+        .ribbon__group { display: flex; align-items: center; gap: 1.75rem; padding: 0.95rem 0.875rem; font-weight: 600; white-space: nowrap; }
+        .ribbon__group svg { width: 1rem; height: 1rem; flex: none; }
+
+        /* ---------- Trabajo ---------- */
+        .work { margin-top: calc(var(--curve) * -1 - 1.5rem); padding-top: calc(var(--section) + var(--curve)); }
+        .work__head { align-items: end; margin-bottom: clamp(4rem, 8vw, 7rem); }
+        .work__head h2 { grid-column: 1 / span 6; position: relative; }
+        .work__head p { grid-column: 8 / -1; max-width: 42ch; }
+        .work__head .spark { left: -2.25rem; top: -1.25rem; width: 1.5rem; height: 1.5rem; }
+        .work__grid { row-gap: clamp(5rem, 8vw, 7.5rem); align-items: start; }
+        .work__item { position: relative; grid-column: 1 / span 6; --c: var(--terracota); --r: -1.6deg; }
+        .work__item:nth-child(even) { grid-column: 8 / -1; margin-top: clamp(4rem, 12vw, 11rem); --c: var(--rosa); --r: 1.8deg; }
+        .work__item:nth-child(3) { --c: var(--burdeos); }
+        .work__item::before { content: ''; position: absolute; z-index: 0; width: 46%; aspect-ratio: 1; border-radius: 50%; background: var(--c); right: -7%; top: -6%; }
+        .work__card { position: relative; z-index: 1; rotate: var(--r); transition: rotate var(--t-ui) var(--ease-out), translate var(--t-ui) var(--ease-out); }
+        .work__frame { position: relative; border-radius: var(--round); overflow: clip; background: var(--vino); }
+        .work__frame img { width: 100%; }
+        .work__tag { position: absolute; left: 1rem; top: 1rem; padding: 0.35rem 0.95rem; border-radius: 999px; background: var(--marfil); color: var(--burdeos); font-size: var(--step-small); font-weight: 600; }
+        .work__name { position: relative; z-index: 1; margin-top: 1.5rem; font-size: var(--step-lead); font-weight: 300; line-height: 1.2; }
+        .work__meta { position: relative; z-index: 1; margin-top: 0.3rem; }
+        .work__more { align-self: end; padding-bottom: 0.5rem; }
+        .work__more::before { display: none; }
+        .work__more p { max-width: 34ch; margin: 1rem 0 1.5rem; }
+        @media (hover: hover) and (pointer: fine) {
+            .work__item:hover .work__card { rotate: 0deg; translate: 0 -6px; }
+        }
+
+        /* ---------- Sobre mí ---------- */
+        .about__orb { width: 36vw; aspect-ratio: 1; right: -12vw; bottom: -10vw; background: var(--vino); opacity: 0.6; }
+        .about h2 { grid-column: 1 / -1; margin-bottom: clamp(2.5rem, 5vw, 4.5rem); position: relative; z-index: 1; }
+        .about__statement { grid-column: 1 / span 6; max-width: 26ch; position: relative; z-index: 1; }
+        .about__statement b { font-weight: 300; color: var(--terracota); }
+        .about__body { grid-column: 8 / -1; position: relative; z-index: 1; }
+        .about__body p + p { margin-top: 1.1em; }
+        .about__facts { display: grid; gap: 1.25rem; margin-top: 2.75rem; }
+        .about__facts div { display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: var(--gutter); }
+        .about__facts dt { color: var(--muted-dark); }
+        .facts { grid-column: 1 / -1; position: relative; z-index: 1; display: flex; flex-wrap: wrap; justify-content: center; margin-top: clamp(4rem, 8vw, 6.5rem); }
+        .fact { position: relative; display: grid; place-content: center; width: clamp(10rem, 19vw, 16.5rem); aspect-ratio: 1; padding: 1.75rem; border-radius: 50%; background: var(--vino); text-align: center; }
+        .fact + .fact { margin-left: clamp(-1.75rem, -1.5vw, -0.75rem); }
+        .fact:nth-child(even) { z-index: 1; background: var(--terracota); color: var(--burdeos); }
+        .fact:nth-child(even) .muted { color: var(--burdeos); }
+        .fact__num { display: block; font-size: var(--step-head); font-weight: 300; line-height: 1; letter-spacing: -0.03em; }
+        .fact__label { display: block; max-width: 15ch; margin: 0.6rem auto 0; }
+
+        /* ---------- Trayectoria ---------- */
+        .path h2 { grid-column: 1 / -1; margin-bottom: clamp(2.5rem, 5vw, 4.5rem); }
+        .path__main { grid-column: 1 / span 7; }
+        .path__side { grid-column: 9 / -1; display: grid; gap: 2.75rem; align-content: start; }
+        .path h3 { font-size: var(--step-text); font-weight: 600; margin-bottom: 1.5rem; }
+        .path__side h3 { margin-bottom: 1rem; }
+        .timeline { position: relative; padding-left: 2.5rem; }
+        .timeline::before { content: ''; position: absolute; left: 0.55rem; top: 0.6rem; bottom: 0.6rem; width: 2px; border-radius: 2px; background: var(--terracota); }
+        .job { position: relative; display: grid; grid-template-columns: 8.5rem minmax(0, 1fr); column-gap: var(--gutter); }
+        .job::before { content: ''; position: absolute; left: -2.5rem; top: 0.35rem; width: 1.2rem; height: 1.2rem; border-radius: 50%; background: var(--marfil); border: 4px solid var(--burdeos); }
+        .job:first-child::before { background: var(--terracota); }
+        .job + .job { margin-top: 2.5rem; }
+        .job__when { padding-top: 0.15rem; }
+        .job__where { font-size: var(--step-lead); font-weight: 300; line-height: 1.2; letter-spacing: -0.01em; }
+        .job__what { margin-top: 0.3rem; font-weight: 600; }
+        .job__note { margin-top: 0.35rem; max-width: 52ch; }
+        .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .chips li { padding: 0.45rem 1rem; border-radius: 999px; background: rgba(96, 35, 49, 0.08); font-size: var(--step-small); }
+        .degree { padding: 1.5rem; border-radius: var(--round); background: var(--burdeos); color: var(--marfil); }
+        .degree .muted { color: var(--muted-dark); }
+
+        /* ---------- Lo que hago: tres arcos unidos por + ---------- */
+        .skills h2 { grid-column: 1 / -1; margin-bottom: clamp(3rem, 6vw, 5rem); }
+        .trio { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; }
+        .arch { height: 100%; padding: clamp(3.5rem, 6vw, 5rem) clamp(1.5rem, 2.5vw, 2.5rem) 2.5rem; border-radius: 999px 999px var(--round) var(--round); background: var(--vino); text-align: center; }
+        .arch h3 { font-size: var(--step-lead); font-weight: 300; line-height: 1.2; letter-spacing: -0.01em; }
+        .arch > p { margin: 0.75rem auto 0; max-width: 24ch; }
+        .arch ul { margin: 1.75rem 0 0; padding: 0; list-style: none; }
+        .arch li { padding-block: 0.3rem; }
+        .plus { position: relative; z-index: 1; display: grid; place-items: center; width: 4rem; height: 4rem; margin-inline: -1.25rem; border-radius: 50%; background: var(--terracota); color: var(--burdeos); font-size: 2rem; font-weight: 300; line-height: 1; }
+
+        /* ---------- Identidad de marca: láminas en abanico ---------- */
+        .brands { align-items: center; }
+        .brands__text { grid-column: 1 / span 4; position: relative; z-index: 1; }
+        .brands__text p { margin-top: 1.5rem; max-width: 34ch; }
+        .fan { grid-column: 6 / -1; position: relative; height: clamp(24rem, 34vw, 31rem); }
+        .board { position: absolute; margin: 0; padding: 10px; border-radius: 1.25rem; background: var(--marfil); transition: rotate var(--t-ui) var(--ease-out), translate var(--t-ui) var(--ease-out); }
+        .board img { width: 100%; border-radius: 0.75rem; }
+        .board figcaption { padding: 0.6rem 0.25rem 0.1rem; font-size: var(--step-small); color: var(--muted-light); }
+        .board--a { width: 40%; left: 0; top: 6%; rotate: -8deg; }
+        .board--b { width: 40%; left: 30%; top: 0; rotate: 2deg; z-index: 2; }
+        .board--c { width: 28%; right: 0; top: 22%; rotate: 9deg; }
+        .board:hover, .board:focus-within { rotate: 0deg; translate: 0 -10px; z-index: 3; }
+        .fan .spark--a { right: 4%; bottom: 4%; color: var(--burdeos); width: 2rem; height: 2rem; }
+
+        /* ---------- Contacto ---------- */
+        .contact__orb { width: 40vw; aspect-ratio: 1; left: -14vw; bottom: -16vw; background: var(--vino); opacity: 0.6; }
+        .contact__intro { grid-column: 1 / span 5; position: relative; z-index: 1; }
+        .contact__intro > p { margin-top: 1.25rem; }
+        .contact__list { display: grid; gap: 1.1rem; margin-top: 3rem; }
+        .contact__list div { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); align-items: baseline; gap: var(--gutter); }
+        .contact__list dt { color: var(--muted-dark); }
+        .contact__list dd { font-size: var(--step-lead); font-weight: 300; line-height: 1.25; overflow-wrap: anywhere; }
+        .panel { grid-column: 7 / -1; position: relative; z-index: 1; padding: clamp(1.75rem, 3.5vw, 3rem); border-radius: calc(var(--round) * 1.4); background: var(--vino); }
+        .pick__q { font-size: var(--step-lead); font-weight: 300; line-height: 1.25; }
+        .pick { border: 0; padding: 0; min-width: 0; }
+        .pick__opts { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+        .pick__opts label { position: relative; display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0 1.1rem; border-radius: 999px; background: var(--burdeos); color: var(--muted-dark); cursor: pointer; transition: background-color var(--t-hover) ease, color var(--t-hover) ease; }
+        .pick__opts input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
+        .pick__opts label:has(input:checked) { background: var(--terracota); color: var(--burdeos); font-weight: 600; }
+        .pick__opts label:has(input:focus-visible) { outline: 2px solid var(--terracota); outline-offset: 2px; }
+        .pick__fig { display: grid; grid-template-columns: 8rem minmax(0, 1fr); gap: 1.25rem; align-items: end; margin-top: 2rem; }
+        .pick__fig img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: top; border-radius: 999px 999px 1rem 1rem; background: var(--burdeos); }
+        .panel .button { margin-top: 2rem; }
+        @media (hover: hover) and (pointer: fine) {
+            .pick__opts label:hover { color: var(--marfil); }
+            .pick__opts label:has(input:checked):hover { color: var(--burdeos); }
+        }
+
+        /* ---------- Pie ---------- */
+        .foot { position: relative; overflow: clip; margin-top: calc(var(--curve) * -1); border-radius: var(--curve) var(--curve) 0 0; padding-top: clamp(4.5rem, 8vw, 7rem); background: var(--vino); }
+        .foot__brand { grid-column: 1 / span 6; }
+        .foot__lockup { font-size: var(--step-lead); line-height: 1.15; letter-spacing: -0.02em; }
+        .foot__lockup b { display: block; font-weight: 800; }
+        .foot__lockup span { display: block; font-weight: 300; }
+        .foot__brand > p:last-child { margin-top: 0.75rem; color: var(--terracota); }
+        .foot__links { grid-column: 8 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 0.25rem var(--gutter); align-content: start; }
+        .foot__links a { display: inline-flex; align-items: center; min-height: 2.75rem; }
+        .foot__legal { grid-column: 1 / -1; margin-top: clamp(3rem, 6vw, 5rem); }
+        .foot__word { width: calc(100% - var(--margin) * 2); height: auto; margin: 2rem var(--margin) -3vw; }
+        .foot__word text { stroke: rgba(243, 232, 223, 0.32); }
+
+        /* ---------- Tableta ---------- */
+        @media (max-width: 1080px) {
+            .badge { left: -2rem; }
+            .work__head h2, .work__head p { grid-column: 1 / -1; }
+            .work__head p { margin-top: 1.25rem; }
+            .work__item { grid-column: 1 / span 6; }
+            .work__item:nth-child(even) { grid-column: 7 / -1; margin-top: 6rem; }
+            .about__statement, .about__body { grid-column: 1 / -1; }
+            .about__statement { max-width: 26ch; margin-bottom: 2.5rem; }
+            .about__body { max-width: 60ch; }
+            .fact { width: clamp(10rem, 30vw, 14rem); }
+            .path__main, .path__side { grid-column: 1 / -1; }
+            .path__side { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 3.5rem; }
+            .path__side > :last-child { grid-column: 1 / -1; }
+            .trio { grid-template-columns: minmax(0, 1fr); justify-items: center; }
+            .arch { width: min(100%, 30rem); }
+            .plus { margin: -1.25rem 0; }
+            .brands__text, .fan { grid-column: 1 / -1; }
+            .fan { margin-top: 3rem; height: 62vw; }
+            .contact__intro, .panel { grid-column: 1 / -1; }
+            .panel { margin-top: 3.5rem; }
+            .foot__brand, .foot__links { grid-column: 1 / -1; }
+            .foot__links { margin-top: 2.5rem; }
+        }
+
+        /* ---------- Teléfono ---------- */
+        @media (max-width: 720px) {
+            .js .bar__toggle { display: inline-flex; align-items: center; }
+            .js .bar__links { display: none; position: absolute; top: calc(100% - 0.5rem); left: var(--margin); right: var(--margin); flex-direction: column; gap: 0; padding: 0.5rem 1.5rem 1rem; border-radius: var(--round); background: var(--vino); }
+            .js .bar__links.is-open { display: flex; }
+            .bar__links { flex-wrap: wrap; gap: 1rem; }
+            .bar { min-height: 4.75rem; }
+
+            .hero { padding-bottom: calc(var(--curve) + 5rem); }
+            .hero__orb { width: 80vw; left: -30vw; top: -34vw; }
+            .hero__main { row-gap: 3rem; padding-top: 1rem; }
+            .hero__text, .hero__visual { grid-column: 1 / -1; }
+            .hero__visual { width: min(76%, 18rem); margin-top: 0; }
+            .badge { width: 6rem; left: -1.75rem; }
+            .hero__role { margin-top: 1.5rem; }
+            .hero__actions { margin-top: 2rem; }
+            .hero__word { left: -10vw; width: 120vw; bottom: calc(var(--curve) + 2.5rem); }
+
+            .work__head .spark { display: none; }
+            .work__item, .work__item:nth-child(even) { grid-column: 1 / -1; margin-top: 0; }
+            .work__item::before { width: 40%; right: -4%; }
+            .facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); justify-items: center; row-gap: 0.5rem; }
+            .fact, .fact + .fact { width: 100%; margin: 0; padding: 1rem; }
+            .fact__num { font-size: 1.875rem; }
+            .path__side { grid-template-columns: minmax(0, 1fr); }
+            .timeline { padding-left: 2rem; }
+            .job { grid-template-columns: minmax(0, 1fr); }
+            .job::before { left: -2rem; }
+            .job__when { order: -1; padding-top: 0; margin-bottom: 0.25rem; }
+            .fan { height: 120vw; }
+            .board--a, .board--b { width: 48%; }
+            .board--a { top: 2%; }
+            .board--b { left: 48%; top: 6%; }
+            .board--c { width: 34%; right: auto; left: 30%; top: 60%; }
+            .pick__fig { grid-template-columns: 6rem minmax(0, 1fr); }
+            .panel .button { width: 100%; white-space: normal; text-align: center; padding-block: 0.75rem; }
+            .foot__links { grid-template-columns: 1fr; }
+        }
+
+        /* ---------- Movimiento ---------- */
+        @media (prefers-reduced-motion: no-preference) {
+            .js .hero__name .line { display: block; overflow: hidden; padding-bottom: 0.1em; margin-bottom: -0.1em; }
+            .js .hero__name .line > span { display: block; transform: translateY(105%); animation: rise-line 1000ms var(--ease-expo) forwards; animation-delay: calc(150ms + var(--i) * 110ms); }
+            .js .hero [data-load] { opacity: 0; transform: translateY(14px); animation: rise 700ms var(--ease-out) forwards; animation-delay: var(--d); }
+            .js .hero__portrait { clip-path: inset(100% 0 0 0 round 999px 999px var(--round) var(--round)); animation: open 1300ms var(--ease-in-out) 200ms forwards; }
+            .js .hero__portrait img { transform: scale(1.1); animation: settle 1700ms var(--ease-expo) 200ms forwards; }
+            .js .hero__disc { transform: scale(0.4); opacity: 0; animation: pop 1100ms var(--ease-expo) 500ms forwards; }
+            .badge__ring { animation: spin 26s linear infinite; }
+            .spark { animation: twinkle 3.6s ease-in-out infinite; }
+            .spark--b { animation-delay: -1.8s; }
+            .ribbon__track { animation: slide 38s linear infinite; }
+            .ribbon:hover .ribbon__track { animation-play-state: paused; }
+
+            .js [data-reveal] { opacity: 0; transform: translateY(24px); transition: opacity 800ms var(--ease-out), transform 1000ms var(--ease-out); transition-delay: calc(var(--i, 0) * 90ms); }
+            .js [data-reveal].is-in { opacity: 1; transform: none; }
+        }
+        @keyframes rise-line { to { transform: none; } }
+        @keyframes rise { to { opacity: 1; transform: none; } }
+        @keyframes open { to { clip-path: inset(0 0 0 0 round 999px 999px var(--round) var(--round)); } }
+        @keyframes settle { to { transform: none; } }
+        @keyframes pop { to { transform: none; opacity: 1; } }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        @keyframes twinkle { 0%, 100% { scale: 1; opacity: 1; } 50% { scale: 0.7; opacity: 0.55; } }
+        @keyframes slide { to { transform: translateX(-50%); } }
+
+        @supports (animation-timeline: view()) {
+            @media (prefers-reduced-motion: no-preference) {
+                .hero { view-timeline-name: --hero; }
+                .hero__orb { animation: orb-drift linear both; animation-timeline: --hero; animation-range: exit 0% exit 100%; }
+                .hero__word { animation: word-drift linear both; animation-timeline: --hero; animation-range: exit 0% exit 100%; }
+                @keyframes orb-drift { to { transform: translate(6vw, 8vw) scale(1.1); } }
+                @keyframes word-drift { to { transform: translateX(-6vw); } }
             }
         }
     </style>
-    </head>
-    <body>
-        <div class="blob-bg">
-            <div class="blob blob-1"></div>
-            <div class="blob blob-2"></div>
-            <div class="blob blob-3"></div>
-        </div>
+</head>
+<body>
+    <a class="skip" href="#contenido">Saltar al contenido</a>
 
-        <div class="floating-icons">
-            <span class="float-icon">📱</span>
-            <span class="float-icon">💬</span>
-            <span class="float-icon">📸</span>
-            <span class="float-icon">🎨</span>
-            <span class="float-icon">✨</span>
-        </div>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <symbol id="spark" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.6 6.4 5.6 11.4 12 12-6.4.6-11.4 5.6-12 12-.6-6.4-5.6-11.4-12-12C6.4 11.4 11.4 6.4 12 0Z"/></symbol>
+    </svg>
 
-        <!-- Navigation -->
-        <nav>
-            <div class="logo">
-                <div class="logo-icon">✦</div>
-                Rogelmist
-            </div>
-            <ul class="nav-links">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#sobre-mi">Sobre Mí</a></li>
-                <li><a href="#experiencia">Experiencia</a></li>
-                <li><a href="#habilidades">Habilidades</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+    <!-- Portada -->
+    <header class="hero" id="inicio">
+        <span class="orb hero__orb" aria-hidden="true"></span>
+        <svg class="outline-word hero__word" viewBox="0 0 1000 240" aria-hidden="true" focusable="false"><text x="500" y="190" font-size="208" text-anchor="middle">marketing</text></svg>
+
+        <nav class="bar wrap" aria-label="Principal">
+            <a class="bar__brand" href="#inicio"><b>Rogelmist</b> Ferreira</a>
+            <button class="bar__toggle" type="button" aria-expanded="false" aria-controls="nav-list">Menú</button>
+            <ul class="bar__links" id="nav-list">
+                <li><a class="link" href="#trabajo">Trabajo</a></li>
+                <li><a class="link" href="#sobre-mi">Sobre mí</a></li>
+                <li><a class="link" href="#trayectoria">Trayectoria</a></li>
+                <li><a class="link" href="#contacto">Contacto</a></li>
             </ul>
-            <div class="menu-toggle" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </nav>
 
-        <!-- Hero Section -->
-        <section class="hero" id="inicio">
-            <div class="hero-container">
-                <div class="hero-content">
-                    <div class="greeting">
-                        👋 ¡Hola! Bienvenido a mi espacio creativo
-                    </div>
-                    <h1>Soy <span class="highlight">Rogelmist</span> Guadalupe
-                        Ferreira Bastidas</h1>
-                    <div class="hero-roles">
-                        <span class="role-tag">📢 Publicista</span>
-                        <span class="role-tag">📊 Especialista en
-                            Marketing</span>
-                        <span class="role-tag">📈 Analista</span>
-                        <span class="role-tag">💬 Community Manager</span>
-                    </div>
-                    <p class="hero-description">
-                        +4 años creando contenido que conecta, estrategias que
-                        funcionan y comunidades que crecen en Venezuela, EE.UU.
-                        y España 🌎
-                    </p>
-                    <div class="hero-location">
-                        <svg width="18" height="18" viewBox="0 0 24 24"
-                            fill="currentColor">
-                            <path
-                                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-                        </svg>
-                        Madrid, España
-                    </div>
-                    <div class="hero-cta">
-                        <a href="Rogelmist Ferreira CURRICULUM 2025-2026.pdf" download class="btn btn-primary">
-                            📄 Descargar CV
-                        </a>
-                        <a href="PORTAFOLIO PORTU EN REDES PDF .pdf" download class="btn btn-primary">
-                            🎨 Ver Portafolio
-                        </a>
-                        <a href="#contacto" class="btn btn-secondary">
-                            💌 Contáctame
-                        </a>
-                    </div>
+        <div class="hero__main wrap grid">
+            <div class="hero__text">
+                <h1 class="hero__name">
+                    <span class="hero__first line"><span style="--i:0">Rogelmist Guadalupe</span></span>
+                    <span class="hero__last line"><span style="--i:1">Ferreira Bastidas</span></span>
+                </h1>
+                <p class="hero__role" data-load style="--d:480ms">Publicista y Marketing Specialist en DQS Consulting, en Madrid.</p>
+                <p class="hero__concept lead" data-load style="--d:560ms">Creatividad <b>+</b> Estrategia <b>+</b> Resultados</p>
+                <div class="hero__actions" data-load style="--d:640ms">
+                    <a class="button" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=rogelmist@gmail.com&amp;su=Hola%20Rogelmist%20-%20Consulta%20desde%20tu%20portafolio&amp;body=Hola%20Rogelmist%2C%0A%0AMe%20gustar%C3%ADa%20ponerme%20en%20contacto%20contigo%20para%20hablar%20sobre%3A%0A%0A" target="_blank" rel="noopener">Escríbeme <span class="arrow" aria-hidden="true">→</span></a>
+                    <a class="text-action link" href="Rogelmist Ferreira CURRICULUM 2025-2026.pdf" download>Descargar CV <span class="arrow" aria-hidden="true">↓</span></a>
                 </div>
-                <div class="hero-visual">
-                    <div class="profile-frame">
-                        <div class="profile-card">
-                            👩‍💻
+            </div>
+            <div class="hero__visual">
+                <span class="orb hero__disc" aria-hidden="true"></span>
+                <figure class="hero__portrait">
+                    <img src="foto_perfil_personal.jpg" width="400" height="400" fetchpriority="high" alt="Rogelmist Guadalupe Ferreira Bastidas, sonriente, con americana color marfil en una oficina">
+                </figure>
+                <svg class="badge" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+                    <circle cx="100" cy="100" r="100" fill="#602331"/>
+                    <g class="badge__ring">
+                        <path id="badge-path" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0" fill="none"/>
+                        <text fill="#F3E8DF" font-family="Montserrat, sans-serif" font-size="15" font-weight="600" letter-spacing="2"><textPath href="#badge-path" textLength="460" lengthAdjust="spacing">CREATIVIDAD + ESTRATEGIA + RESULTADOS +</textPath></text>
+                    </g>
+                    <use href="#spark" x="82" y="82" width="36" height="36" color="#D29A87"/>
+                </svg>
+                <svg class="spark spark--a" aria-hidden="true" focusable="false"><use href="#spark"/></svg>
+                <svg class="spark spark--b" aria-hidden="true" focusable="false"><use href="#spark"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="ribbon-band" aria-hidden="true"><div class="ribbon">
+        <div class="ribbon__track">
+            <div class="ribbon__group"><span>Publicidad</span><svg><use href="#spark"/></svg><span>Marketing digital</span><svg><use href="#spark"/></svg><span>Branding</span><svg><use href="#spark"/></svg><span>Contenido para redes</span><svg><use href="#spark"/></svg><span>Copywriting</span><svg><use href="#spark"/></svg><span>Estrategia</span><svg><use href="#spark"/></svg><span>Análisis de métricas</span><svg><use href="#spark"/></svg></div>
+            <div class="ribbon__group"><span>Publicidad</span><svg><use href="#spark"/></svg><span>Marketing digital</span><svg><use href="#spark"/></svg><span>Branding</span><svg><use href="#spark"/></svg><span>Contenido para redes</span><svg><use href="#spark"/></svg><span>Copywriting</span><svg><use href="#spark"/></svg><span>Estrategia</span><svg><use href="#spark"/></svg><span>Análisis de métricas</span><svg><use href="#spark"/></svg></div>
+        </div>
+    </div></div>
+
+    <main id="contenido">
+        <!-- Trabajo -->
+        <section class="sheet on-light work" id="trabajo" aria-labelledby="trabajo-t">
+            <div class="wrap">
+                <div class="work__head grid">
+                    <h2 class="heading" id="trabajo-t" data-reveal><svg class="spark" aria-hidden="true" focusable="false"><use href="#spark"/></svg>Trabajo seleccionado</h2>
+                    <p data-reveal style="--i:1">Feeds de Instagram creados para marcas de repostería, cosmética, estética, reformas y alimentación, en tres países.</p>
+                </div>
+                <ul class="work__grid grid">
+                    <li class="work__item" data-reveal>
+                        <div class="work__card">
+                            <figure class="work__frame"><img src="img/feed-purabakery.webp" width="664" height="888" loading="lazy" alt="Feed de Instagram de Pura Bakery: galletas, brownies y babka en tonos rosa y chocolate"><span class="work__tag">@purabakery</span></figure>
                         </div>
-                        <div class="social-bubbles">
-                            <div class="bubble bubble-1">📸</div>
-                            <div class="bubble bubble-2">💡</div>
-                            <div class="bubble bubble-3">🚀</div>
+                        <h3 class="work__name">Pura Bakery</h3>
+                        <p class="work__meta small muted">Repostería artesanal</p>
+                    </li>
+                    <li class="work__item" data-reveal>
+                        <div class="work__card">
+                            <figure class="work__frame"><img src="img/feed-glowbal.webp" width="664" height="888" loading="lazy" alt="Feed de Glowbal Beauty Haus: maquillaje, sérums y frascos sobre fondos melocotón y rosa"><span class="work__tag">@glowbalbeautyhaus</span></figure>
                         </div>
+                        <h3 class="work__name">Glowbal Beauty Haus</h3>
+                        <p class="work__meta small muted">Fabricación de cosmética</p>
+                    </li>
+                    <li class="work__item" data-reveal>
+                        <div class="work__card">
+                            <figure class="work__frame"><img src="img/feed-truelaser.webp" width="664" height="888" loading="lazy" alt="Feed de True Laser en morado y azul: depilación, cejas, labios y opiniones de clientas"><span class="work__tag">@true.laser</span></figure>
+                        </div>
+                        <h3 class="work__name">True Laser</h3>
+                        <p class="work__meta small muted">Centro de estética en España</p>
+                    </li>
+                    <li class="work__item" data-reveal>
+                        <div class="work__card">
+                            <figure class="work__frame"><img src="img/feed-rbwoodworks.webp" width="664" height="888" loading="lazy" alt="Feed de RB Woodworks en amarillo y gris: baños, cocinas, puertas de granero y escaleras"><span class="work__tag">@rbwoodworks__97</span></figure>
+                        </div>
+                        <h3 class="work__name">RB Woodworks</h3>
+                        <p class="work__meta small muted">Reformas en Carolina del Norte, EE.&nbsp;UU.</p>
+                    </li>
+                    <li class="work__item" data-reveal>
+                        <div class="work__card">
+                            <figure class="work__frame"><img src="img/feed-feria.webp" width="664" height="888" loading="lazy" alt="Feed de la Feria Agrícola Las Fuentes: frutas, verduras, batidos y sorteos en rojo, naranja y verde"><span class="work__tag">@feriagricolalasfuentes</span></figure>
+                        </div>
+                        <h3 class="work__name">Feria Agrícola Las Fuentes</h3>
+                        <p class="work__meta small muted">Mercado agrícola en Venezuela</p>
+                    </li>
+                    <li class="work__item work__more" data-reveal>
+                        <h3 class="lead">Más trabajo</h3>
+                        <p class="muted">Los feeds de Evolution Logistic, Beias, Bold Girls y Transporte MZCZ están en el portafolio completo.</p>
+                        <a class="button" href="PORTAFOLIO PORTU EN REDES PDF .pdf" download>Descargar portafolio (PDF) <span class="arrow" aria-hidden="true">↓</span></a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sobre mí -->
+        <section class="sheet on-dark" id="sobre-mi" aria-labelledby="sobre-mi-t">
+            <span class="orb about__orb" aria-hidden="true"></span>
+            <div class="wrap grid about">
+                <h2 class="heading" id="sobre-mi-t" data-reveal>Sobre mí</h2>
+                <p class="about__statement lead" data-reveal style="--i:1">Convierto ideas en marcas con personalidad <b>y</b> estrategias que generan resultados.</p>
+                <div class="about__body" data-reveal style="--i:2">
+                    <p>Soy publicista y hoy trabajo como Marketing Specialist en DQS Consulting, en Madrid. Desde 2021 he creado contenido, campañas e identidades para empresas de Venezuela, Estados Unidos y España.</p>
+                    <p>Combino la creatividad visual con el análisis de datos: cada pieza tiene un propósito y cada campaña se mide.</p>
+                    <dl class="about__facts">
+                        <div><dt class="small">Base</dt><dd>Madrid, España</dd></div>
+                        <div><dt class="small">Formación</dt><dd>Publicista, Instituto Universitario de Mercadotecnia</dd></div>
+                        <div><dt class="small">Correo</dt><dd><a class="link link--on" href="mailto:rogelmist@gmail.com">rogelmist@gmail.com</a></dd></div>
+                    </dl>
+                </div>
+                <ul class="facts" aria-label="En cifras">
+                    <li class="fact" data-reveal><span class="fact__num">+4 años</span><span class="fact__label small muted">en marketing digital y creación de contenido</span></li>
+                    <li class="fact" data-reveal style="--i:1"><span class="fact__num">3 países</span><span class="fact__label small muted">Venezuela, Estados Unidos y España</span></li>
+                    <li class="fact" data-reveal style="--i:2"><span class="fact__num">+150</span><span class="fact__label small muted">piezas corporativas para La Mundial de Seguros</span></li>
+                    <li class="fact" data-reveal style="--i:3"><span class="fact__num">+50&nbsp;%</span><span class="fact__label small muted">de interacción en redes para La Mundial de Seguros</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Trayectoria -->
+        <section class="sheet on-light" id="trayectoria" aria-labelledby="trayectoria-t">
+            <div class="wrap grid path">
+                <h2 class="heading" id="trayectoria-t" data-reveal>Trayectoria</h2>
+                <div class="path__main">
+                    <h3 data-reveal>Experiencia</h3>
+                    <ol class="timeline">
+                        <li class="job" data-reveal><span class="job__when small muted">Actualidad</span><div><p class="job__where">DQS Consulting</p><p class="job__what">Marketing Specialist</p></div></li>
+                        <li class="job" data-reveal><span class="job__when small muted">2024 – 2025</span><div><p class="job__where">Inspira Agency Marketing</p><p class="job__what">Estratega de contenido y marketing digital</p><p class="job__note muted">Estrategias de contenido para más de cinco cuentas de sectores distintos en Madrid, con calendarios mensuales y análisis del mercado español.</p></div></li>
+                        <li class="job" data-reveal><span class="job__when small muted">2023 – 2024</span><div><p class="job__where">La Mundial de Seguros</p><p class="job__what">Analista de marketing</p><p class="job__note muted">Transformación digital de la marca: más de un 50&nbsp;% de interacción en redes, más de 150 piezas corporativas, alianzas con influencers y eventos.</p></div></li>
+                        <li class="job" data-reveal><span class="job__when small muted">2022 – 2023</span><div><p class="job__where">Impulso Digital</p><p class="job__what">Social media manager</p><p class="job__note muted">Más de seis cuentas activas, con copys orientados a conversión y calendarios basados en objetivos comerciales.</p></div></li>
+                        <li class="job" data-reveal><span class="job__when small muted">2021 – 2022</span><div><p class="job__where">Lion Tech</p><p class="job__what">Community manager y copywriter</p><p class="job__note muted">Contenido creativo, coherencia de marca, atención al cliente y gestión de crisis en redes.</p></div></li>
+                    </ol>
+                </div>
+                <div class="path__side">
+                    <div class="degree" data-reveal>
+                        <h3>Formación</h3>
+                        <p class="lead">Publicista</p>
+                        <p class="small muted">Instituto Universitario de Mercadotecnia · 2025</p>
+                    </div>
+                    <div data-reveal>
+                        <h3>Cursos</h3>
+                        <ul class="chips">
+                            <li>Diseño gráfico para redes sociales</li>
+                            <li>Neuromarketing</li>
+                            <li>Instagram para negocios</li>
+                            <li>Community manager</li>
+                            <li>Oratoria y presentación</li>
+                        </ul>
+                    </div>
+                    <div data-reveal>
+                        <h3>Herramientas</h3>
+                        <ul class="chips">
+                            <li>Canva Pro</li>
+                            <li>Adobe Photoshop</li>
+                            <li>Adobe Illustrator</li>
+                            <li>Meta Business Suite</li>
+                            <li>Creator Studio</li>
+                            <li>Google Analytics</li>
+                            <li>Microsoft Office</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
-        <section class="about" id="sobre-mi">
-            <div class="section-header reveal">
-                <span class="section-label">✨ Conóceme</span>
-                <h2 class="section-title">Sobre Mí</h2>
-            </div>
-            <div class="about-container">
-                <div class="about-visual reveal">
-                    <div class="stat-card">
-                        <div class="stat-number">+50%</div>
-                        <div class="stat-label">Incremento en Engagement</div>
-                        <div class="mini-cards">
-                            <div class="mini-card">
-                                <div class="mini-card-icon">🌎</div>
-                                <div class="mini-card-text">3 países</div>
-                            </div>
-                            <div class="mini-card">
-                                <div class="mini-card-icon">📅</div>
-                                <div class="mini-card-text">+4 años</div>
-                            </div>
-                            <div class="mini-card">
-                                <div class="mini-card-icon">❤️</div>
-                                <div class="mini-card-text">Mucha pasión</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-content reveal">
-                    <h3>Creatividad + Datos = Resultados 💫</h3>
-                    <p>
-                        Soy una publicista apasionada que cree firmemente en
-                        combinar la <strong>creatividad visual</strong> con el
-                        <strong>análisis de datos</strong>. Cada post, cada
-                        campaña, cada estrategia está pensada para conectar de
-                        verdad con las personas.
-                    </p>
-                    <p>
-                        Mi experiencia internacional me ha enseñado a entender
-                        diferentes audiencias y adaptar el mensaje para que
-                        resuene en cada cultura. ¡El marketing digital es mi
-                        lenguaje universal! 🌍
-                    </p>
-                    <div class="about-tags">
-                        <span class="about-tag">🎯 Estratega</span>
-                        <span class="about-tag">🎨 Creativa</span>
-                        <span class="about-tag">📊 Analítica</span>
-                        <span class="about-tag">💬 Comunicadora</span>
-                    </div>
+        <!-- Lo que hago -->
+        <section class="sheet on-dark" id="servicios" aria-labelledby="servicios-t">
+            <div class="wrap grid skills">
+                <h2 class="heading" id="servicios-t" data-reveal>Lo que hago</h2>
+                <div class="trio">
+                    <article class="arch" data-reveal>
+                        <h3>Creatividad</h3>
+                        <p class="muted">Ideas propias y una identidad que se reconoce en cada pieza.</p>
+                        <ul>
+                            <li>Branding y diseño digital</li>
+                            <li>Logotipos y brand boards</li>
+                            <li>Reels, stories y carruseles</li>
+                            <li>Copywriting persuasivo</li>
+                            <li>Guiones audiovisuales</li>
+                        </ul>
+                    </article>
+                    <span class="plus" aria-hidden="true">+</span>
+                    <article class="arch" data-reveal style="--i:1">
+                        <h3>Estrategia</h3>
+                        <p class="muted">Cada acción responde a un objetivo y a un calendario.</p>
+                        <ul>
+                            <li>Estrategia de contenido</li>
+                            <li>Calendarios editoriales</li>
+                            <li>Investigación de mercado</li>
+                            <li>Neuromarketing</li>
+                            <li>Colaboración con influencers</li>
+                        </ul>
+                    </article>
+                    <span class="plus" aria-hidden="true">+</span>
+                    <article class="arch" data-reveal style="--i:2">
+                        <h3>Resultados</h3>
+                        <p class="muted">Métricas que dicen qué funciona y qué hay que cambiar.</p>
+                        <ul>
+                            <li>Análisis de métricas</li>
+                            <li>Gestión de comunidades</li>
+                            <li>Gestión de crisis</li>
+                            <li>Comunicación interna y externa</li>
+                            <li>Eventos corporativos</li>
+                        </ul>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <!-- Experience Section -->
-        <section class="experience" id="experiencia">
-            <div class="section-header reveal">
-                <span class="section-label">💼 Mi Recorrido</span>
-                <h2 class="section-title">Experiencia Profesional</h2>
-                <p class="section-subtitle">Las marcas y proyectos que han
-                    marcado mi carrera</p>
-            </div>
-            <div class="experience-grid">
-                <div class="experience-card reveal">
-                    <div class="experience-icon">🚀</div>
-                    <h3 class="experience-company">Inspira Agency Marketing
-                        SL</h3>
-                    <p class="experience-role">Especialista en Marketing Digital
-                        • España</p>
-                    <p class="experience-description">
-                        Estrategias integrales de marketing, campañas en redes
-                        sociales y contenido creativo para marcas del sector
-                        servicios.
-                    </p>
+        <!-- Identidad de marca -->
+        <section class="sheet on-accent" id="marcas" aria-labelledby="marcas-t">
+            <div class="wrap grid brands">
+                <div class="brands__text" data-reveal>
+                    <h2 class="heading" id="marcas-t">Identidad de marca</h2>
+                    <p>Logotipo, variaciones, tipografía y paleta reunidos en un brand board. Así nacieron las identidades de Repuestos Dalessa y 3BUY.</p>
                 </div>
-                <div class="experience-card reveal">
-                    <div class="experience-icon">🛡️</div>
-                    <h3 class="experience-company">La Mundial de Seguros</h3>
-                    <p class="experience-role">Community Manager • Venezuela</p>
-                    <p class="experience-description">
-                        Gestión de comunidades digitales, calendario editorial y
-                        producción audiovisual para fortalecer la presencia de
-                        marca.
-                    </p>
-                </div>
-                <div class="experience-card reveal">
-                    <div class="experience-icon">📈</div>
-                    <h3 class="experience-company">Impulso Digital</h3>
-                    <p class="experience-role">Analista de Marketing •
-                        Venezuela</p>
-                    <p class="experience-description">
-                        Análisis de métricas, optimización de campañas y
-                        reportes estratégicos para la toma de decisiones.
-                    </p>
-                </div>
-                <div class="experience-card reveal">
-                    <div class="experience-icon">💻</div>
-                    <h3 class="experience-company">Lion Tech</h3>
-                    <p class="experience-role">Publicista & Creadora •
-                        Venezuela</p>
-                    <p class="experience-description">
-                        Desarrollo de identidad visual, piezas publicitarias y
-                        campañas de lanzamiento para productos tecnológicos.
-                    </p>
+                <div class="fan">
+                    <figure class="board board--a" data-reveal style="--i:1"><img src="img/board-dalessa.webp" width="668" height="928" loading="lazy" alt="Brand board de Repuestos Dalessa: logotipo principal, favicon, variaciones, tipografía Equalize y paleta amarilla, gris y negra"><figcaption>Repuestos Dalessa</figcaption></figure>
+                    <figure class="board board--b" data-reveal style="--i:2"><img src="img/board-3buy.webp" width="656" height="928" loading="lazy" alt="Brand board de 3BUY: logotipo con carrito, favicon, variaciones de color, tipografía Montserrat ExtraBold y paleta azul, naranja y roja"><figcaption>3BUY</figcaption></figure>
+                    <figure class="board board--c" data-reveal style="--i:3"><img src="img/logo-silueta.webp" width="410" height="520" loading="lazy" alt="Logotipo rosa con la silueta de una mujer con pamela, dentro de un arco"><figcaption>Logotipo de silueta</figcaption></figure>
+                    <svg class="spark spark--a" aria-hidden="true" focusable="false"><use href="#spark"/></svg>
                 </div>
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section class="skills" id="habilidades">
-            <div class="section-header reveal">
-                <span class="section-label">🛠️ Mis Herramientas</span>
-                <h2 class="section-title">Habilidades & Tools</h2>
-                <p class="section-subtitle">Las herramientas con las que creo
-                    magia digital ✨</p>
-            </div>
-            <div class="skills-container">
-                <div class="skill-card reveal">
-                    <div class="skill-header">
-                        <div class="skill-icon">🎨</div>
-                        <h3 class="skill-title">Diseño & Creatividad</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Canva Pro</span>
-                        <span class="skill-tag">Adobe Photoshop</span>
-                        <span class="skill-tag">Adobe Illustrator</span>
-                    </div>
+        <!-- Contacto -->
+        <section class="sheet on-dark" id="contacto" aria-labelledby="contacto-t">
+            <span class="orb contact__orb" aria-hidden="true"></span>
+            <div class="wrap grid">
+                <div class="contact__intro">
+                    <h2 class="heading" id="contacto-t">Hablemos de tu marca</h2>
+                    <p class="muted">Desde Madrid, lista para nuevos proyectos.</p>
+                    <dl class="contact__list">
+                        <div><dt class="small">Correo</dt><dd><a class="link" href="mailto:rogelmist@gmail.com">rogelmist@gmail.com</a></dd></div>
+                        <div><dt class="small">LinkedIn</dt><dd><a class="link" href="https://www.linkedin.com/in/rogelmist-ferreira-95a570271/" target="_blank" rel="noopener">in/rogelmist-ferreira</a></dd></div>
+                        <div><dt class="small">Instagram</dt><dd><a class="link" href="https://www.instagram.com/rogelmistferreira/" target="_blank" rel="noopener">@rogelmistferreira</a></dd></div>
+                    </dl>
                 </div>
-                <div class="skill-card reveal">
-                    <div class="skill-header">
-                        <div class="skill-icon">📊</div>
-                        <h3 class="skill-title">Analytics & Gestión</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Meta Business Suite</span>
-                        <span class="skill-tag">Google Analytics</span>
-                        <span class="skill-tag">Microsoft Office</span>
-                    </div>
-                </div>
-                <div class="skill-card reveal">
-                    <div class="skill-header">
-                        <div class="skill-icon">📱</div>
-                        <h3 class="skill-title">Redes Sociales</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Instagram</span>
-                        <span class="skill-tag">Facebook</span>
-                        <span class="skill-tag">TikTok</span>
-                        <span class="skill-tag">LinkedIn</span>
-                    </div>
+                <div class="panel">
+                    <h3 class="pick__q" id="pick-q">¿De qué sector es tu marca?</h3>
+                    <fieldset class="pick" aria-labelledby="pick-q">
+                        <div class="pick__opts">
+                            <label><input type="radio" name="sector" value="repostería" data-feed="img/feed-purabakery.webp" data-who="Pura Bakery" checked>Repostería</label>
+                            <label><input type="radio" name="sector" value="cosmética" data-feed="img/feed-glowbal.webp" data-who="Glowbal Beauty Haus">Cosmética</label>
+                            <label><input type="radio" name="sector" value="estética" data-feed="img/feed-truelaser.webp" data-who="True Laser">Estética</label>
+                            <label><input type="radio" name="sector" value="reformas" data-feed="img/feed-rbwoodworks.webp" data-who="RB Woodworks">Reformas</label>
+                            <label><input type="radio" name="sector" value="alimentación" data-feed="img/feed-feria.webp" data-who="Feria Agrícola Las Fuentes">Alimentación</label>
+                            <label><input type="radio" name="sector" value="moda" data-feed="img/feed-boldgirls.webp" data-who="Bold Girls">Moda</label>
+                            <label><input type="radio" name="sector" value="logística" data-feed="img/feed-evolution.webp" data-who="Evolution Logistic">Logística</label>
+                            <label><input type="radio" name="sector" value="otro sector" data-feed="foto_perfil_personal.jpg" data-who="">Otro</label>
+                        </div>
+                    </fieldset>
+                    <figure class="pick__fig">
+                        <img id="pick-img" src="img/feed-purabakery.webp" width="664" height="888" loading="lazy" alt="Feed que Rogelmist creó para Pura Bakery">
+                        <figcaption id="pick-cap" class="small muted" aria-live="polite">Así quedó el feed que diseñé para Pura Bakery en Instagram.</figcaption>
+                    </figure>
+                    <a class="button" id="pick-go" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=rogelmist@gmail.com&amp;su=Hola%20Rogelmist%20-%20Consulta%20desde%20tu%20portafolio&amp;body=Hola%20Rogelmist%2C%0A%0AMe%20gustar%C3%ADa%20ponerme%20en%20contacto%20contigo%20para%20hablar%20sobre%3A%0A%0A" target="_blank" rel="noopener">Escríbeme sobre tu marca <span class="arrow" aria-hidden="true">→</span></a>
                 </div>
             </div>
         </section>
+    </main>
 
-        <!-- Certifications Section -->
-        <section class="certifications">
-            <div class="section-header reveal">
-                <span class="section-label">📜 Aprendizaje Continuo</span>
-                <h2 class="section-title">Certificaciones</h2>
+    <!-- Pie -->
+    <footer class="foot">
+        <div class="wrap grid">
+            <div class="foot__brand">
+                <p class="foot__lockup"><b>Rogelmist Guadalupe</b><span>Ferreira Bastidas</span></p>
+                <p>Creatividad + Estrategia + Resultados</p>
             </div>
-            <div class="certs-container">
-                <div class="cert-badge reveal">
-                    <div class="cert-badge-icon">🎨</div>
-                    <span class="cert-badge-name">Diseño Gráfico Digital</span>
-                </div>
-                <div class="cert-badge reveal">
-                    <div class="cert-badge-icon">🧠</div>
-                    <span class="cert-badge-name">Neuromarketing</span>
-                </div>
-                <div class="cert-badge reveal">
-                    <div class="cert-badge-icon">📸</div>
-                    <span class="cert-badge-name">Instagram para Negocios</span>
-                </div>
-                <div class="cert-badge reveal">
-                    <div class="cert-badge-icon">🎤</div>
-                    <span class="cert-badge-name">Oratoria & Comunicación</span>
-                </div>
-                <div class="cert-badge reveal">
-                    <div class="cert-badge-icon">💬</div>
-                    <span class="cert-badge-name">Community Management</span>
-                </div>
-            </div>
-        </section>
+            <ul class="foot__links">
+                <li><a class="link" href="Rogelmist Ferreira CURRICULUM 2025-2026.pdf" download>CV en PDF</a></li>
+                <li><a class="link" href="https://www.linkedin.com/in/rogelmist-ferreira-95a570271/" target="_blank" rel="noopener">LinkedIn</a></li>
+                <li><a class="link" href="PORTAFOLIO PORTU EN REDES PDF .pdf" download>Portafolio en PDF</a></li>
+                <li><a class="link" href="https://www.instagram.com/rogelmistferreira/" target="_blank" rel="noopener">Instagram</a></li>
+                <li><a class="link" href="mailto:rogelmist@gmail.com">Correo</a></li>
+                <li><a class="link" href="https://www.facebook.com/rogelmistguadalupe.ferreirabastidas" target="_blank" rel="noopener">Facebook</a></li>
+            </ul>
+            <p class="foot__legal small muted">© 2026 Rogelmist Guadalupe Ferreira Bastidas · Madrid, España</p>
+        </div>
+        <svg class="outline-word foot__word" viewBox="0 0 1000 200" aria-hidden="true" focusable="false"><text x="0" y="190" font-size="201">Rogelmist</text></svg>
+    </footer>
 
-        <!-- Competencies Section -->
-        <section class="competencies">
-            <div class="section-header reveal">
-                <span class="section-label">💪 Lo Que Mejor Hago</span>
-                <h2 class="section-title">Competencias Clave</h2>
-            </div>
-            <div class="competencies-grid">
-                <div class="competency-item reveal">
-                    <div class="competency-icon">📝</div>
-                    <span class="competency-name">Estrategia de Contenido</span>
-                </div>
-                <div class="competency-item reveal">
-                    <div class="competency-icon">✍️</div>
-                    <span class="competency-name">Copywriting Persuasivo</span>
-                </div>
-                <div class="competency-item reveal">
-                    <div class="competency-icon">📊</div>
-                    <span class="competency-name">Análisis de Métricas</span>
-                </div>
-                <div class="competency-item reveal">
-                    <div class="competency-icon">🤝</div>
-                    <span class="competency-name">Colaboración con
-                        Influencers</span>
-                </div>
-                <div class="competency-item reveal">
-                    <div class="competency-icon">🎬</div>
-                    <span class="competency-name">Producción de
-                        Microcontenidos</span>
-                </div>
-                <div class="competency-item reveal">
-                    <div class="competency-icon">🏷️</div>
-                    <span class="competency-name">Branding &
-                        Posicionamiento</span>
-                </div>
-                <div class="competency-item reveal">
-                    <div class="competency-icon">🔍</div>
-                    <span class="competency-name">Investigación de
-                        Mercado</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Education Section -->
-        <section class="education">
-            <div class="section-header reveal">
-                <span class="section-label">🎓 Formación</span>
-                <h2 class="section-title">Educación</h2>
-            </div>
-            <div class="education-card reveal">
-                <h3 class="education-degree">Publicista</h3>
-                <p class="education-institution">Instituto Universitario de
-                    Mercadotecnia</p>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section class="contact" id="contacto">
-            <div class="contact-container">
-                <div class="contact-emoji reveal">💌</div>
-                <h2 class="contact-title reveal">¿Trabajamos <span
-                        class="highlight">juntos</span>?</h2>
-                <p class="contact-subtitle reveal">Estoy lista para nuevos
-                    proyectos, colaboraciones o simplemente para charlar sobre
-                    marketing y redes sociales ☕</p>
-                <div class="contact-cards">
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rogelmist@gmail.com&su=Hola%20Rogelmist%20-%20Consulta%20desde%20tu%20portafolio&body=Hola%20Rogelmist%2C%0A%0AMe%20gustar%C3%ADa%20ponerme%20en%20contacto%20contigo%20para%20hablar%20sobre%3A%0A%0A" target="_blank"
-                        class="contact-card reveal">
-                        <div class="contact-card-icon">✉️</div>
-                        <div class="contact-card-info">
-                            <p class="contact-card-label">Email</p>
-                            <p
-                                class="contact-card-value">rogelmist@gmail.com</p>
-                        </div>
-                    </a>
-                    <a
-                        href="https://www.linkedin.com/in/rogelmist-ferreira-95a570271/"
-                        target="_blank" class="contact-card reveal">
-                        <div class="contact-card-icon">💼</div>
-                        <div class="contact-card-info">
-                            <p class="contact-card-label">LinkedIn</p>
-                            <p
-                                class="contact-card-value">linkedin.com/in/rogelmist-ferreira</p>
-                        </div>
-                    </a>
-                    <a href="https://www.instagram.com/rogelmistferreira/" target="_blank"
-                        class="contact-card reveal">
-                        <div class="contact-card-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                            </svg>
-                        </div>
-                        <div class="contact-card-info">
-                            <p class="contact-card-label">Instagram</p>
-                            <p class="contact-card-value">@rogelmistferreira</p>
-                        </div>
-                    </a>
-                    <a href="https://www.facebook.com/rogelmistguadalupe.ferreirabastidas" target="_blank"
-                        class="contact-card reveal">
-                        <div class="contact-card-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
-                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                            </svg>
-                        </div>
-                        <div class="contact-card-info">
-                            <p class="contact-card-label">Facebook</p>
-                            <p class="contact-card-value">Rogelmist Ferreira</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer>
-            <p>© 2024 Rogelmist Ferreira • Hecho con <span
-                    class="heart">♥</span> y mucho café ☕</p>
-        </footer>
-
-        <script>
-        // Mobile Menu Toggle
-        function toggleMenu() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        }
-
-        // Scroll Reveal Animation
-        function reveal() {
-            const reveals = document.querySelectorAll('.reveal');
-            reveals.forEach(element => {
-                const windowHeight = window.innerHeight;
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 120;
-
-                if (elementTop < windowHeight - elementVisible) {
-                    element.classList.add('active');
-                }
+    <script>
+        // Menú del teléfono
+        (() => {
+            const toggle = document.querySelector('.bar__toggle');
+            const list = document.getElementById('nav-list');
+            const setOpen = (open) => {
+                toggle.setAttribute('aria-expanded', String(open));
+                list.classList.toggle('is-open', open);
+            };
+            toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+            list.addEventListener('click', (e) => { if (e.target.closest('a')) setOpen(false); });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') { setOpen(false); toggle.focus(); }
             });
-        }
+        })();
 
-        window.addEventListener('scroll', reveal);
-        reveal();
-
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    document.querySelector('.nav-links').classList.remove('active');
+        // Aparición al entrar en pantalla (una sola vez; lo que ya quedó arriba cuenta como visto; sin JavaScript, todo visible)
+        (() => {
+            const targets = document.querySelectorAll('[data-reveal]');
+            if (!('IntersectionObserver' in window)) { targets.forEach((el) => el.classList.add('is-in')); return; }
+            const io = new IntersectionObserver((entries) => {
+                for (const entry of entries) {
+                    if (!entry.isIntersecting) continue;
+                    entry.target.classList.add('is-in');
+                    io.unobserve(entry.target);
                 }
-            });
-        });
+            }, { rootMargin: '100000px 0px -8% 0px', threshold: 0 });
+            targets.forEach((el) => io.observe(el));
+        })();
 
-        // Navbar shadow on scroll
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.style.boxShadow = '0 5px 30px rgba(135, 206, 235, 0.3)';
-            } else {
-                nav.style.boxShadow = 'none';
-            }
-        });
+        // Contacto: elige el sector de tu marca, mira un feed real de ese sector y escríbele con el asunto ya puesto
+        (() => {
+            const compose = (subject, body) => 'https://mail.google.com/mail/?view=cm&fs=1&to=rogelmist@gmail.com&su='
+                + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+            const img = document.getElementById('pick-img');
+            const cap = document.getElementById('pick-cap');
+            const go = document.getElementById('pick-go');
+            const update = (input) => {
+                const sector = input.value;
+                const who = input.dataset.who;
+                img.src = input.dataset.feed;
+                if (who) {
+                    img.alt = 'Feed que Rogelmist creó para ' + who;
+                    cap.textContent = 'Así quedó el feed que diseñé para ' + who + ' en Instagram.';
+                } else {
+                    img.alt = 'Retrato de Rogelmist';
+                    cap.textContent = 'Cuéntame de qué va tu marca y empezamos por ahí.';
+                }
+                go.href = compose('Mi marca de ' + sector,
+                    'Hola Rogelmist,\n\nTengo una marca de ' + sector + ' y me gustaría hablar contigo sobre:\n\n');
+            };
+            document.querySelectorAll('input[name="sector"]').forEach((input) => {
+                input.addEventListener('change', () => update(input));
+            });
+            // Si el navegador restauró otra opción al recargar, la página se pone de acuerdo con ella
+            const checked = document.querySelector('input[name="sector"]:checked');
+            if (checked && !checked.defaultChecked) update(checked);
+        })();
     </script>
-    </body>
+</body>
 </html>
